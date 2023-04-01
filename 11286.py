@@ -15,4 +15,4 @@ for _ in range(N):
             print(ans[1], end = "\n")
     else:
         heapq.heappush(heap, [abs(M), int(M)])
-        # print(heap)
+        print(heap)
