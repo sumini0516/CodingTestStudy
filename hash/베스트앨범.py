@@ -23,6 +23,6 @@ def solution(genres, plays):
             answer.append(dict[genre][0][1])
         else:
             answer.append(dict[genre][0][1])
-            answer.append(dict[genre][1][1])
+            answer.append(dict[genre][1][1]) #끝
 
     return answer
