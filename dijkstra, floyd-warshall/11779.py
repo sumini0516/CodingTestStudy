@@ -32,7 +32,6 @@ def dijkstra(start):
 N = int(input())
 M = int(input())
 INF = int(1e9)
-
 graph = defaultdict(list)
 distance = [INF] * (N + 1)
 prev_node = [0] * (N + 1)
@@ -45,7 +44,7 @@ for i in range(M):
 start, end = map(int, input().split())
 
 d, p = dijkstra(start)
-
+print(p)
 path = [end]
 now = end
 while now != start:
