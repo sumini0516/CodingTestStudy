@@ -15,12 +15,9 @@ while (start <= end):
         if blueray_len > mid:
             num += 1
             blueray_len = i
-    # print("num", num)
     if num > M:
-        # print("start", start, "mid", mid, "end", end)
         start = mid + 1
     else:
-        # print("start", start, "mid", mid, "end", end)
         end = mid - 1
 
 print(start)

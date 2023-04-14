@@ -1,23 +1,35 @@
 import sys
+from collections import deque
 
 input = sys.stdin.readline
 
-N, M = map(int, input().split())
-trees = list(map(int, input().split()))
+N, C = map(int, input().split())
 
-start, end = 1, max(trees)
+houses = list()
 
-while (start <= end):
+for i in range(N):
+    x = int(input())
+    houses.append(x)
+
+houses.sort()
+answer = 0
+
+start = 1
+end = houses[-1]
+
+while start <= end:
     mid = (start + end) // 2
-    cut_tree = 0
-    for i in trees:
-        if i > mid:
-            cut_tree += i - mid
+    current = houses[0]
+    cnt = 1
+    for i in range(len(houses)):
+        if current + mid <= houses[i]:
+            cnt += 1
+            current = houses[i]
 
-    if cut_tree >= M:
+    if cnt >= C:
+        answer = mid
         start = mid + 1
-
     else:
         end = mid - 1
 
-print(end)
+print(answer)
