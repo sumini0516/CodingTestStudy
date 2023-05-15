@@ -6,7 +6,7 @@ dx = [-1, 1, 0, 0]
 dy = [0, 0, 1, -1]
 
 
-def dfs(start_x, start_y):
+def bfs(start_x, start_y):
     queue = deque()
     queue.append((start_x, start_y))
     graph[start_x][start_y] = 0
@@ -48,8 +48,8 @@ for i in range(N):
     a = list(map(int, input().split(" ")))
     graph[i] = a
 
-result = dfs(0, 0)
-if result > T or result == 0:
+result = bfs(0, 0)
+if result >= T or result == 0:
     print("Fail")
 else:
     print(result)
