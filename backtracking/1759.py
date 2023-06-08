@@ -13,3 +13,5 @@ if N >= 3:
     print(dp[N] % 10007)
 else:
     print(dp[N])
+
+print("hello")
