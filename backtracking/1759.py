@@ -14,4 +14,4 @@ if N >= 3:
 else:
     print(dp[N])
 
-print("hello")
+print("hi")
