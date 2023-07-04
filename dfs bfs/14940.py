@@ -17,11 +17,11 @@ def bfs(x, y):
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
-            if 0 <= nx < M and 0 <= ny < N and visited[nx][ny] == 0:
+            if 0 <= nx < N and 0 <= ny < M and visited[nx][ny] == 0:
                 if graph[nx][ny] == 0:
                     visited[nx][ny] = 1
                     res[nx][ny] = 0
-                else:
+                elif graph[nx][ny] == 1:
                     visited[nx][ny] = 1
                     res[nx][ny] = res[x][y] + 1
                     queue.append((nx, ny))
