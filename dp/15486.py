@@ -18,5 +18,5 @@ for i in range(1, N + 1):
     if complete <= N:
         dp[complete] = max(dp[complete], dp[i - 1] + P[i])
 
-print(max(dp))
+print(dp)
 
