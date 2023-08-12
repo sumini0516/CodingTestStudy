@@ -13,6 +13,7 @@ seat = [[0] * (N + 1) for _ in range(N + 1)]
 
 student = defaultdict(list)
 
+
 for _ in range(N ** 2):
     info = list(map(int, input().split()))
     student_num = info[0]
