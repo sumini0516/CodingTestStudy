@@ -13,3 +13,5 @@ for i in range(N):
     SM, SD, EM, ED = map(int, input().split())
     flowers.append((SM, SD, EM, ED))
 
+print(flowers)
+
