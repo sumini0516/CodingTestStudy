@@ -11,7 +11,7 @@ def bfs(node, dist):
             visited[next_node] = dist + next_dist
             bfs(next_node, dist + next_dist)
 
-    return max(visited)
+    return visited.index(max(visited))
 
 N = int(input())
 for i in range(N - 1):
@@ -21,11 +21,10 @@ for i in range(N - 1):
 
 visited = [-1] * (N + 1)
 visited[1] = 0
-answer = bfs(1, 0)
-A = visited.index(answer)
-
+a = bfs(1, 0)
+print(visited)
+print(a)
 visited = [-1] * (N + 1)
-visited[A] = 0
-answer = bfs(A, 0)
-
-print(answer)
+visited[a] = 0
+answer = bfs(a, 0)
+print(max(visited))
