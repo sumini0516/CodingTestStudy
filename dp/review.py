@@ -3,20 +3,20 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-dp = [0] * N
-drink = [0] * N
+dp = [0] * (N + 1)
+T = [0] * (N + 1)
+P = [0] * (N + 1)
 
 for i in range(N):
-    M = int(input())
-    drink[i] = M
-print(drink)
-dp[0] = drink[0]
-if N > 1:
-    dp[1] = drink[0] + drink[1]
-if N > 2:
-    dp[2] = max(dp[1], drink[0] + drink[2], drink[1] + drink[2])
+    t, p = map(int, input().split(" "))
+    T[i + 1] = t
+    P[i + 1] = p
 
-for i in range(3, N):
-    dp[i] = max(dp[i - 1], drink[i] + dp[i - 3] + drink[i - 1], drink[i] + dp[i - 2])
+for i in range(1, N + 1):
+    dp[i] = max(dp[i], dp[i - 1])
+    complete = i + T[i] - 1
+    if complete <= N:
+        dp[complete] = max(dp[complete], dp[i - 1] + P[i])
+    # print(dp)
 
-print(dp[-1])
+print(max(dp))
